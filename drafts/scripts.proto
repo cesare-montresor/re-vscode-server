@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+
+package ScriptManagerServer;
+
+
+message Script {
+    string path = 1;
+    string content = 2;
+    enum Status {
+        STOPPED = 0;
+        RUNNING = 1;
+        PAUSED = 2;
+    }
+    Status status = 3;
+}
+
+message ScriptList {
+    repeated Script scripts = 1;
+}
+
+message ScriptAction {
+    string path = 1;
+    enum Action {
+        PLAY = 0;
+        STOP = 1;
+        PAUSE = 2;
+        RESUME = 3;
+    }
+    Action action = 2;
+}

@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+            "label": "build",
+			"type": "dotnet",
+			"task": "build /home/cesare/Projects/re-vscode-server/APITest/APITest.csproj",
+			"file": "/home/cesare/Projects/re-vscode-server/APITest/APITest.csproj",
+			"group": "build",
+			"problemMatcher": [],
+			//"label": "dotnet: build /home/cesare/Projects/re-vscode-server/APITest/APITest.csproj"
+		}
+	]
+} 

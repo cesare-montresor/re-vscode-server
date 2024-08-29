@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/APITest/APITest.csproj",
+            //"launchConfigurationId": "TargetFramework=;Microsoft.NETCore.App",
+            //"debugServer": 4711,
+            "console": "externalTerminal" // externalTerminal
+        },
+        {
+            "name": "Debug",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/APITest/bin/Debug/net6.0/APITest.dll",
+            "console": "externalTerminal", // externalTerminal
+            //"debugServer": 4711,
+        }
+    ]
+}
+
+
+/*
+  "name": "Launch Me",
+  "type": "coreclr",
+  "request": "launch",
+  "preLaunchTask": "build",
+  "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+*/
