@@ -118,8 +118,9 @@ public class REVSCodeServer : WebSocketBehavior
         // Initialize with some sample scripts if the dictionary is empty
         if (scripts.IsEmpty)
         {
-            scripts.TryAdd("/scripts/script1", new Script { Path = "/scripts/script1", Filename = "script1.py", Content = "print('Hello from script1')", Status = "stop" });
-            scripts.TryAdd("/scripts/script2", new Script { Path = "/scripts/script2", Filename = "script2.cs", Content = "Console.WriteLine(\"Hello from script2\");", Status = "stop" });
+            scripts.TryAdd("/scripts/script1.py", new Script { Path = "/scripts/script1.py", Filename = "script1.py", Content = "print('Hello from script1')", Status = "stop" });
+            scripts.TryAdd("/scripts/script2.cs", new Script { Path = "/scripts/script2.cs", Filename = "script2.cs", Content = "Console.WriteLine(\"Hello from script2\");", Status = "stop" });
+            scripts.TryAdd("/scripts/script3.uos", new Script { Path = "/scripts/script3.uos", Filename = "script3.uos", Content = "msg 'hello'", Status = "stop" });
         }
     }
 
@@ -194,6 +195,7 @@ public class REVSCodeServer : WebSocketBehavior
         if (scripts.TryGetValue(path, out var script))
         {
             script.Status = action == "resume" ? "run" : action;
+            Console.WriteLine($"UpdateScriptStatus: {script.Status}: {script.Path}");
             scripts[path] = script; // Update the script in the dictionary
         }
     }
